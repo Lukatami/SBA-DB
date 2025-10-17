@@ -5,7 +5,7 @@ const partnerSchema = new Schema(
   {
     name: { type: String, required: true, unique: true, trim: true },
     contact: {
-      phone: { type: String, match: /^[\+]?[1-9][\d]{0,15}$/ },
+      phone: { type: String, match: /^(\+0?1\s)?\(?[A-Z0-9]{3}\)?[\s.-][A-Z0-9]{3}[\s.-][A-Z0-9]{4}$/ },
       email: {
         type: String,
         match: /^\S+@\S+\.\S+$/,
@@ -17,7 +17,5 @@ const partnerSchema = new Schema(
   },
   { timestamps: true }
 );
-
-partnerSchema.index({ name: 1 });
 
 export default mongoose.model("Partner", partnerSchema);
