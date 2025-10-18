@@ -15,6 +15,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const item = await Item.findById(req.params.id);
+    if (!item) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.status(200).json(item);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const { name, description, price, category, unit, partner } = req.body;
@@ -36,6 +49,27 @@ router.post("/", async (req, res) => {
     res
       .status(400)
       .json({ message: "Invalid data or not unique SKU", error: err.message });
+  }
+});
+
+router.patch("/:id", async (req, res) => {
+  try {
+    // Store id from req.params
+    const { id } = req.params;
+    // Store body from req.body
+    const updates = req.body;
+
+    const updatedItem = await Item.findByIdAndUpdate(id, updates, {
+      // Return updated document
+      new: true,
+      // Use schema validation
+      runValidators: true,
+    });
+
+    res.status(200).json(updatedItem);
+  } catch (err) {
+    console.error("Error updating item:", err);
+    res.status(400).json({ message: "Invalid data", error: err.message });
   }
 });
 
