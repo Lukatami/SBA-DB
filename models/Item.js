@@ -78,8 +78,8 @@ async function generateUniqueSKU() {
 
   // While loop for assigning unique SKU
   while (!isUnique) {
-    // Assign (4) random digits/letters
-    sku = nanoid(4);
+    // Assign (6) random digits/letters
+    sku = nanoid(6);
     // Check db for same SKU
     const existingItem = await mongoose.model("Item").findOne({ sku });
     // If SKU not found in db set isUnique as true

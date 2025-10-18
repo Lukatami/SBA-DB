@@ -15,6 +15,11 @@ const storageSchema = new Schema(
   { timestamps: true }
 );
 
+storageSchema.pre("save", async function (next) {
+  this.lastUpdated = new Date();
+  next();
+});
+
 storageSchema.index({ item: 1 });
 storageSchema.index({ lastUpdated: -1 });
 
