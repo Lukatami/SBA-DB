@@ -116,5 +116,7 @@ deliverySchema.post("save", async function (delivery) {
 deliverySchema.index({ deliveryDate: -1 });
 // Optimize financial reports
 deliverySchema.index({ totalAmount: -1 });
+// Optimize partner reports
+deliverySchema.index({ partner: 1, deliveryDate: -1 });
 
 export default mongoose.model("Delivery", deliverySchema);

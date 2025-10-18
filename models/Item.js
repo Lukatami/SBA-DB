@@ -92,7 +92,11 @@ async function generateUniqueSKU() {
 
 // Block item duplicates
 itemSchema.index({ name: 1, partner: 1 }, { unique: true });
-// Fast text search
+// Optimize text search
 itemSchema.index({ name: "text", description: "text" });
+// Optimize price sorting
+itemSchema.index({ price: 1 });
+// Optimize searching by partner
+itemSchema.index({ partner: 1 });
 
 export default mongoose.model("Item", itemSchema);
