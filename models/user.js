@@ -17,10 +17,6 @@ const userSchema = new Schema(
       lowercase: true,
       match: /^\S+@\S+\.\S+$/,
     },
-    password: {
-      type: String,
-      required: true,
-    },
     role: {
       type: String,
       enum: ["user", "manager", "admin"],
@@ -29,8 +25,5 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
-
-userSchema.index({ email: 1 });
-userSchema.index({ username: 1 });
 
 export default mongoose.model("User", userSchema);

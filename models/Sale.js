@@ -18,7 +18,7 @@ const saleItemSchema = new Schema({
   subtotal: { type: Number, required: true, min: 0 },
 });
 
-const saleRecieptSchema = new Schema(
+const saleSchema = new Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -29,7 +29,7 @@ const saleRecieptSchema = new Schema(
           const user = await mongoose.model("User").findById(userId);
           return user && ["manager", "admin"].includes(user.role);
         },
-        message: "Only users with manager or admin role valid for saleReciept",
+        message: "Only users with manager or admin role valid for sale",
       },
     },
     items: {
@@ -45,12 +45,12 @@ const saleRecieptSchema = new Schema(
 );
 
 // Pre-save middleware
-saleRecieptSchema.pre("save", async function (next) {
+saleSchema.pre("save", async function (next) {
   // Calculate subtotals for each item
   this.items.forEach((item) => {
     item.subtotal = item.quantity * item.price;
   });
-  // Calculate total receipt amount
+  // Calculate total sale amount
   this.total = this.items.reduce((sum, item) => sum + item.subtotal, 0);
 
   // Create array of all item ObjectIds
@@ -96,10 +96,10 @@ saleRecieptSchema.pre("save", async function (next) {
 });
 
 // Post-save middleware if pre-save validation passed
-saleRecieptSchema.post("save", async function (reciept) {
+saleSchema.post("save", async function (sale) {
   try {
-    // Update Storage for each reciept item
-    for (let item of reciept.items) {
+    // Update Storage for each sale item
+    for (let item of sale.items) {
       await mongoose.model("Storage").updateOne(
         { item: item.item },
         {
@@ -116,10 +116,10 @@ saleRecieptSchema.post("save", async function (reciept) {
 });
 
 // For sales analytics by item
-saleRecieptSchema.index({ "items.item": 1 });
+saleSchema.index({ "items.item": 1 });
 // For user performance tracking
-saleRecieptSchema.index({ user: 1, date: -1 });
+saleSchema.index({ user: 1, date: -1 });
 // For financial reporting
-saleRecieptSchema.index({ date: -1, total: -1 });
+saleSchema.index({ date: -1, total: -1 });
 
-export default mongoose.model("SaleReciept", saleRecieptSchema);
+export default mongoose.model("Sale", saleSchema);
