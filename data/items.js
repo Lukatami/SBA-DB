@@ -1,4 +1,4 @@
-const sampleItemData = [
+export const sampleItemData = [
   {
     name: "Fresh Golden Apples",
     description: "Sweet fresh Golden apples, perfect for juices and baking",
@@ -6,7 +6,6 @@ const sampleItemData = [
     category: "Fruits",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Cherry Tomatoes",
@@ -15,7 +14,6 @@ const sampleItemData = [
     category: "Vegetables",
     unit: "pack",
     pack_size: 250,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Young Potatoes",
@@ -24,7 +22,6 @@ const sampleItemData = [
     category: "Vegetables",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Ripe Bananas",
@@ -33,7 +30,6 @@ const sampleItemData = [
     category: "Fruits",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Milk 3.2%",
@@ -42,7 +38,6 @@ const sampleItemData = [
     category: "Dairy",
     unit: "l",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Greek Yogurt",
@@ -51,7 +46,6 @@ const sampleItemData = [
     category: "Dairy",
     unit: "gr",
     pack_size: 500,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Cheddar Cheese",
@@ -60,7 +54,6 @@ const sampleItemData = [
     category: "Dairy",
     unit: "kg",
     pack_size: 0.5,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Butter Unsalted",
@@ -69,7 +62,6 @@ const sampleItemData = [
     category: "Dairy",
     unit: "gr",
     pack_size: 250,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Chicken Breast",
@@ -78,7 +70,6 @@ const sampleItemData = [
     category: "Poultry",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Ground Beef",
@@ -87,7 +78,6 @@ const sampleItemData = [
     category: "Meat",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Pork Chops",
@@ -96,7 +86,6 @@ const sampleItemData = [
     category: "Meat",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Salmon Fillet",
@@ -105,7 +94,6 @@ const sampleItemData = [
     category: "Seafood",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Whole Wheat Bread",
@@ -114,7 +102,6 @@ const sampleItemData = [
     category: "Bakery",
     unit: "pcs",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Croissants",
@@ -123,7 +110,6 @@ const sampleItemData = [
     category: "Bakery",
     unit: "pack",
     pack_size: 4,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Bagels",
@@ -132,7 +118,6 @@ const sampleItemData = [
     category: "Bakery",
     unit: "pack",
     pack_size: 6,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Orange Juice",
@@ -141,7 +126,6 @@ const sampleItemData = [
     category: "Beverages",
     unit: "l",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Mineral Water",
@@ -150,7 +134,6 @@ const sampleItemData = [
     category: "Beverages",
     unit: "pcs",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Green Tea",
@@ -159,7 +142,6 @@ const sampleItemData = [
     category: "Beverages",
     unit: "pack",
     pack_size: 20,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Olive Oil",
@@ -168,7 +150,6 @@ const sampleItemData = [
     category: "Pantry",
     unit: "ml",
     pack_size: 500,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Pasta Spaghetti",
@@ -177,7 +158,6 @@ const sampleItemData = [
     category: "Pantry",
     unit: "gr",
     pack_size: 500,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Basmati Rice",
@@ -186,7 +166,6 @@ const sampleItemData = [
     category: "Pantry",
     unit: "kg",
     pack_size: 1,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Canned Tomatoes",
@@ -195,7 +174,6 @@ const sampleItemData = [
     category: "Pantry",
     unit: "gr",
     pack_size: 400,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Potato Chips",
@@ -204,7 +182,6 @@ const sampleItemData = [
     category: "Snacks",
     unit: "gr",
     pack_size: 150,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Dark Chocolate",
@@ -213,7 +190,6 @@ const sampleItemData = [
     category: "Snacks",
     unit: "gr",
     pack_size: 100,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Mixed Nuts",
@@ -222,7 +198,6 @@ const sampleItemData = [
     category: "Snacks",
     unit: "gr",
     pack_size: 500,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Mixed Vegetables",
@@ -231,7 +206,6 @@ const sampleItemData = [
     category: "Frozen",
     unit: "gr",
     pack_size: 1000,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Vanilla Ice Cream",
@@ -240,7 +214,6 @@ const sampleItemData = [
     category: "Frozen",
     unit: "ml",
     pack_size: 1000,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Frozen Berries",
@@ -249,7 +222,6 @@ const sampleItemData = [
     category: "Frozen",
     unit: "gr",
     pack_size: 500,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Toilet Paper",
@@ -258,7 +230,6 @@ const sampleItemData = [
     category: "Household",
     unit: "pack",
     pack_size: 12,
-    partner: "68f2bc99f96dfd722010b399",
   },
   {
     name: "Laundry Detergent",
@@ -267,6 +238,5 @@ const sampleItemData = [
     category: "Household",
     unit: "ml",
     pack_size: 1500,
-    partner: "68f2bc99f96dfd722010b399",
   },
 ];

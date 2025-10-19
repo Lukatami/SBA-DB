@@ -20,8 +20,6 @@ storageSchema.pre("save", async function (next) {
   next();
 });
 
-// Optimize item searching
-storageSchema.index({ item: 1 });
 // Optimize latest updates
 storageSchema.index({ lastUpdated: -1 });
 // Optimize searching low-stock

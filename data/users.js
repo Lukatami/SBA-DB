@@ -1,4 +1,4 @@
-const sampleUserData = [
+export const sampleUserData = [
   {
     username: "sample_user",
     email: "user@google.com",

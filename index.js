@@ -9,6 +9,7 @@ dotenv.config();
 import itemsRouter from "./routes/items.js";
 import partnersRouter from "./routes/partners.js";
 import usersRouter from "./routes/users.js";
+import storageRouter from "./routes/storage.js";
 
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(logger);
 app.use("/api/items", itemsRouter);
 app.use("/api/partners", partnersRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/storage", storageRouter);
 
 mongoose
   .connect(connectionString)
