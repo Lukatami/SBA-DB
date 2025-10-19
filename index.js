@@ -1,19 +1,24 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
+import logger from "./middleware/logger.js";
+
 dotenv.config();
 
 import itemsRouter from "./routes/items.js";
 import partnersRouter from "./routes/partners.js";
 
 const app = express();
+app.use(express.json());
+
 const port = process.env.PORT || 5000;
 const connectionString = process.env.ATLAS_URI;
 
-app.use(express.json());
+app.use(logger);
 
-app.use("/items", itemsRouter);
-app.use("/partners", partnersRouter);
+app.use("/api/items", itemsRouter);
+app.use("/api/partners", partnersRouter);
 
 mongoose
   .connect(connectionString)

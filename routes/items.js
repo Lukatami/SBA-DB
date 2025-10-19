@@ -51,7 +51,8 @@ router.get("/sku/:sku", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { name, description, price, category, unit, partner } = req.body;
+    const { name, description, price, category, unit, pack_size, partner } =
+      req.body;
 
     const newItem = new Item({
       name,
@@ -92,7 +93,7 @@ router.patch("/:id", async (req, res) => {
       return res.status(404).json({ message: "Item not found" });
     }
 
-    // Validstion for existing Partner
+    // Validation for existing Partner
     if (updates.partner) {
       const existingPartner = await mongoose
         .model("Partner")
@@ -143,11 +144,11 @@ router.delete("/:id", async (req, res) => {
     const item = await Item.findById(id);
 
     if (!item) {
-      return res.status(404).json({ message: `Item not found` });
+      return res.status(404).json({ message: "Item not found" });
     }
 
-    await item.deleteOne();
-    res.status(200).json({ message: `Item succsessfully deleted` });
+    await Item.findByIdAndDelete(id);
+    res.status(200).json({ message: "Item successfully deleted" });
   } catch (err) {
     console.error("Error deleting item:", err);
     res.status(500).json({ error: "Internal Server Error" });
