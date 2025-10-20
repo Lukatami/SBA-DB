@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 import { nanoid } from "nanoid";
 const { Schema } = mongoose;
 
+// 1 lb = 16 oz
+// 1 gal = 4 qt = 8 pt = 128 fl_oz
+// 1 qt = 2 pt = 32 fl_oz
+// 1 pt = 16 fl_oz
+
 const itemSchema = new Schema(
   {
     name: { type: String, required: true, trim: true },
@@ -11,7 +16,21 @@ const itemSchema = new Schema(
     category: { type: String, required: true, index: true },
     unit: {
       type: String,
-      enum: ["lb", "oz", "kg", "gr", "pcs", "pack", "l", "ml"],
+      enum: [
+        "lb",
+        "oz",
+        "gal",
+        "qt",
+        "pt",
+        "fl_oz",
+        "pcs",
+        "pack",
+        "case",
+        "bunch",
+        "bag",
+        "box",
+      ],
+      required: true,
     },
     pack_size: { type: Number, min: 0 },
     partner: {
